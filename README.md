@@ -1,6 +1,5 @@
 # Audit Statistik `pandas-dev/pandas`
-
-** Statistika dan Probabilitas **
+# Statistika dan Probabilitas
 Repositori: [pandas-dev/pandas](https://github.com/pandas-dev/pandas)
 
 ---
