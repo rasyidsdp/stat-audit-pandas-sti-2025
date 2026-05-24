@@ -15,7 +15,9 @@ Repositori `pandas-dev/pandas` dipilih sebagai objek audit karena memenuhi semua
 Proyek ini berpusat pada tiga pertanyaan, masing-masing untuk satu lapisan analisis.
 
 **P1 — Estimasi (Minggu 11):** Berapa probabilitas sebuah PR digabungkan (merged), dan seberapa besar ketidakpastiannya bila dimodelkan dengan distribusi Beta?
+
 **P2 — Inferensi & Pengujian (Minggu 12–13):** Apakah rata-rata waktu penyelesaian isu berbeda secara signifikan antara isu berlabel `bug` dan `enhancement`?
+
 **P3 — Simulasi (Minggu 14):** Berapa probabilitas sebuah isu membutuhkan lebih dari 30 hari untuk ditutup, bila diestimasi lewat simulasi Monte Carlo?
 
 ---
