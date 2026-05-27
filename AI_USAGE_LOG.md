@@ -5,10 +5,10 @@
 | Anggota | Peran | Alat | ~% Kode yang Dibantu AI | Sel Interpretasi Dibantu AI? |
 |---|---|---|---|---|
 | Muhammad Rasyid Setyadi Dwi Putra | Data Engineer | Gemini, ChatGPT, Claude | ~35% | Tidak |
-| B | Estimation Analyst | — | — | — |
-| C | Inference Analyst | — | — | — |
-| D | Hypothesis Analyst | — | — | — |
-| E | Computation Analyst | — | — | — |
+| Neisya Nurfadilah | Estimation Analyst | — | — | — |
+| Adinda Syafira Kusumadewi | Inference Analyst | — | — | — |
+| Rafiif Ikbaar Taufiqulhakiim | Hypothesis Analyst | — | — | — |
+| Muhammad Risqi Maulana | Computation Analyst | — | — | — |
 
 ---
 
