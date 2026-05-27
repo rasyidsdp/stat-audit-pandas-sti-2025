@@ -53,10 +53,10 @@ Notebook dijalankan berurutan dari `01_eda.ipynb` hingga `05_simulation.ipynb`. 
 | Anggota | Peran | Tanggung Jawab |
 |---|---|---|
 | Muhammad Rasyid Setyadi Dwi Putra | Data Engineer | Pengumpulan data, pembersihan, EDA, pemilihan variabel |
-| B | Estimation Analyst | Derivasi MLE, posterior Beta, visualisasi likelihood |
-| C | Inference Analyst | Selang kepercayaan, selang kredibel |
-| D | Hypothesis Analyst | Pengujian hipotesis, interpretasi p-value |
-| E | Computation Analyst | Simulasi Monte Carlo, Bloom Filter, MCMC |
+| Neisya Nurfadilah | Estimation Analyst | Derivasi MLE, posterior Beta, visualisasi likelihood |
+| Adinda Syafira Kusumadewi | Inference Analyst | Selang kepercayaan, selang kredibel |
+| Rafiif Ikbaar Taufiqulhakiim | Hypothesis Analyst | Pengujian hipotesis, interpretasi p-value |
+| Muhammad Risqi Maulana | Computation Analyst | Simulasi Monte Carlo, Bloom Filter, MCMC |
 
 ---
 
