@@ -6,7 +6,7 @@
 |---|---|---|---|---|
 | Muhammad Rasyid Setyadi Dwi Putra | Data Engineer | Gemini, ChatGPT, Claude | ~35% | Tidak |
 | Neisya Nurfadilah | Estimation Analyst | — | — | — |
-| Adinda Syafira Kusumadewi | Inference Analyst | — | — | — |
+| Adinda Syafira Kusumadewi | Inference Analyst | ChatGPT | ~40% | Tidak |
 | Rafiif Ikbaar Taufiqulhakiim | Hypothesis Analyst | — | — | — |
 | Muhammad Risqi Maulana | Computation Analyst | — | — | — |
 
