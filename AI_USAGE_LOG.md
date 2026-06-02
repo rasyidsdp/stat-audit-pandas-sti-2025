@@ -30,9 +30,14 @@
 
 ---
 
-### B — Estimation Analyst
+### Adinda Syafira Kusumadewi — Estimation Analyst
 
-(Akan diisi oleh Anggota B.)
+| No | Tugas | Alat | Prompt | Cara Output Digunakan |
+|---|---|---|---|---|
+| 1 | Mencari kesalahan kode error pada python | ChatGPT | "Apa yang salah dari kode ini?" | Terlihat adanya masalah sintaks seperti penempatan kurung kurawal yang kurang tepat hingga menyebabkan error |
+| 2 | Rule Of Three pada CI Bernoulli | ChatGPT | "Apakah Penanganan Kasus Ekstrem Statistika (Rule of Three) perlu ditambah pada bernoulli?" | Ya, karena membuat fungsi lebih robust dan menangani kasus ekstrem dengan lebih realistis |
+
+**Ditulis tanpa AI:** Seluruh sel markdown interpretasi; Rumusan 4 research question; Narasi ringkasan dan kontekstualisasi terhadap repositori pandas; Keputusan variabel yang diteruskan ke Anggota D.
 
 ---
 
