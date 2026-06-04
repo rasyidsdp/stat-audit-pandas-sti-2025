@@ -30,7 +30,13 @@
 
 ---
 
-### Adinda Syafira Kusumadewi — Estimation Analyst
+### B — Estimation Analyst
+
+(Akan diisi oleh Anggota B.)
+
+---
+
+### Adinda Syafira Kusumadewi — Inference Analyst
 
 | No | Tugas | Alat | Prompt | Cara Output Digunakan |
 |---|---|---|---|---|
@@ -38,12 +44,6 @@
 | 2 | Rule Of Three pada CI Bernoulli | ChatGPT | "Apakah Penanganan Kasus Ekstrem Statistika (Rule of Three) perlu ditambah pada bernoulli?" | Ya, karena membuat fungsi lebih robust dan menangani kasus ekstrem dengan lebih realistis |
 
 **Ditulis tanpa AI:** Seluruh sel markdown interpretasi; Rumusan 4 research question; Narasi ringkasan dan kontekstualisasi terhadap repositori pandas; Keputusan variabel yang diteruskan ke Anggota D.
-
----
-
-### C — Inference Analyst
-
-(Akan diisi oleh Anggota C.)
 
 ---
 
