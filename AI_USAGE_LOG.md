@@ -32,8 +32,6 @@
 
 ### Neisya Nurfadilah — Estimation Analyst
 
-### Neisya – Estimation Analyst
-
 | No | Tugas | Alat | Prompt | Cara Output Digunakan |
 |----|--------|------|---------|----------------------|
 | 1 | Mencari kesalahan kode Python pada notebook estimasi | ChatGPT | "Apakah ada error atau bug pada kode estimasi ini?" | Digunakan untuk menemukan kesalahan sintaks dan logika sebelum analisis dijalankan |
