@@ -142,61 +142,25 @@ class Inference:
         data: list | np.ndarray,
         confidence: float = 0.95
     ) -> dict:
-        """
-    Menghitung confidence interval untuk parameter λ (lambda) dari distribusi Poisson menggunakan pendekatan distribusi normal.
-
-    Estimasi parameter λ diperoleh dari rata-rata sampel:
-        lambda_hat = mean(data)
-
-    Dengan standard error:
-        SE = sqrt(lambda_hat / n)
-
-    Confidence interval dihitung dengan rumus:
-        lambda_hat ± z * SE
-
-    Batas bawah interval dibatasi minimum 0 karena parameter λ pada distribusi Poisson tidak dapat bernilai negatif.
-
-    Args:
-        data (list | np.ndarray):
-            Data sampel yang diasumsikan mengikuti distribusi Poisson.
-            Seluruh nilai harus berupa bilangan non-negatif.
-        confidence (float, optional):
-            Tingkat kepercayaan interval. Default = 0.95 (95%).
-
-    Returns:
-        dict:
-            Dictionary yang berisi:
-            - lambda_hat (float): estimasi parameter λ.
-            - lower (float): batas bawah confidence interval.
-            - upper (float): batas atas confidence interval.
-            - margin (float): margin of error.
-            - z_critical (float): nilai kritis distribusi normal.
-            - confidence (float): tingkat kepercayaan yang digunakan.
-            - n (int): ukuran sampel.
-            - se (float): standard error estimasi λ.
-
-    Raises:
-        ValueError:
-            Jika data kosong, terdapat nilai negatif dalam data, atau confidence tidak berada pada rentang (0, 1).
-    """
-
         data = np.asarray(data, dtype=float)
 
         if len(data) == 0:
             raise ValueError("data tidak boleh kosong")
 
+        # Menguji apakah data valid untuk count data (Poisson)
         if np.any(data < 0):
             raise ValueError("data Poisson tidak boleh bernilai negatif")
-
+            
         if not 0 < confidence < 1:
             raise ValueError("confidence harus berada antara 0 dan 1")
 
         n = len(data)
-
         lambda_hat = np.mean(data)
+        
         alpha = 1 - confidence
         z = stats.norm.ppf(1 - alpha / 2)
 
+        # Standard error untuk rata-rata sampel dari distribusi Poisson
         se = np.sqrt(lambda_hat / n)
         margin = z * se
 
@@ -210,7 +174,6 @@ class Inference:
             "n"         : n,
             "se"        : se,
         }
-
 
     def credible_interval(
         self,

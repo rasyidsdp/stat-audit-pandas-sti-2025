@@ -82,18 +82,11 @@ class BloomFilter:
 # BAGIAN 3: MCMC KNAPSACK
 # =====================================================================
 
-def mcmc_knapsack(items, capacity, n_iter=100000):
+def mcmc_knapsack(items, capacity, n_iter=100000, T=1.0):
     """
-    Menyelesaikan Knapsack Problem menggunakan Algoritma Metropolis-Hastings (MCMC).
-    
-    :param items: List of dict, contoh: [{'weight': 10, 'value': 60}, ...]
-    :param capacity: Kapasitas berat maksimum knapsack
-    :param n_iter: Jumlah iterasi MCMC
-    :return: (best_state, best_value)
+    Menyelesaikan Knapsack Problem menggunakan Algoritma Metropolis-Hastings (MCMC) yang benar.
     """
     num_items = len(items)
-    
-    # State awal: semua barang tidak diambil (0)
     current_state = np.zeros(num_items, dtype=int)
     current_value = 0
     current_weight = 0
@@ -102,29 +95,26 @@ def mcmc_knapsack(items, capacity, n_iter=100000):
     best_value = current_value
 
     for _ in range(n_iter):
-        # 1. Pilih satu item secara acak untuk diubah statusnya (0 jadi 1, atau 1 jadi 0)
+        # 1. Pilih item secara acak untuk di-flip (0 -> 1 atau 1 -> 0)
         proposal_idx = random.randint(0, num_items - 1)
         proposal_state = current_state.copy()
-        proposal_state[proposal_idx] = 1 - proposal_state[proposal_idx] # Flip bit
+        proposal_state[proposal_idx] = 1 - proposal_state[proposal_idx]
         
-        # 2. Hitung berat dan nilai dari proposal state
-        proposal_weight = sum(proposal_state[i] * items[i]['weight'] for i in range(num_items))
-        proposal_value = sum(proposal_state[i] * items[i]['value'] for i in range(num_items))
+        # 2. Hitung berat dan nilai proposal
+        proposal_weight = sum(items[i]['weight'] for i in range(num_items) if proposal_state[i] == 1)
+        proposal_value = sum(items[i]['value'] for i in range(num_items) if proposal_state[i] == 1)
         
-        # 3. Validasi batasan kapasitas
+        # Jika melebihi kapasitas, otomatis tolak proposal state ini
         if proposal_weight > capacity:
-            # Jika melebihi kapasitas, berikan penalti berat pada nilainya 
-            # atau langsung tolak (di sini kita beri peluang sangat kecil/penalti)
-            proposal_value = 0 
+            continue
             
-        # 4. Kriteria Penerimaan Metropolis-Hastings
-        # Jika nilai proposal lebih baik, langsung terima. 
-        # Jika lebih buruk, terima dengan probabilitas exp(proposal_val - current_val)
+        # 3. Kriteria Penerimaan Metropolis-Hastings berdasarkan selisih nilai objektif
         if proposal_value > current_value:
             accept = True
         else:
-            # Menggunakan basis eksponensial sederhana untuk eksplorasi
-            prob = math.exp(proposal_value - current_value) if proposal_value > 0 else 0
+            # Menggunakan perbedaan nilai (delta) dan temperatur T
+            diff = proposal_value - current_value
+            prob = math.exp(diff / T)
             accept = random.random() < prob
             
         if accept:
@@ -132,8 +122,8 @@ def mcmc_knapsack(items, capacity, n_iter=100000):
             current_value = proposal_value
             current_weight = proposal_weight
             
-            # Simpan jika ini adalah kombinasi terbaik yang pernah ditemukan
-            if current_value > best_value and current_weight <= capacity:
+            # Simpan jika ini konfigurasi terbaik yang sah
+            if current_value > best_value:
                 best_value = current_value
                 best_state = current_state.copy()
                 
