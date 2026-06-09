@@ -8,7 +8,7 @@
 | Neisya Nurfadilah | Estimation Analyst | ChatGPT | ~30% | Tidak |
 | Adinda Syafira Kusumadewi | Inference Analyst | ChatGPT | ~40% | Tidak |
 | Rafiif Ikbaar Taufiqulhakiim | Hypothesis Analyst | Gemini | ~25% | Tidak |
-| Muhammad Risqi Maulana | Computation Analyst | — | — | — |
+| Muhammad Risqi Maulana | Computation Analyst | Gemini | ~30% | Tidak |
 
 ---
 
@@ -72,6 +72,14 @@
 
 ---
 
-### E — Computation Analyst
+### Muhammad Risqi Maulana — Simulation 
 
-(Akan diisi oleh Anggota E.)
+| No | Tugas | Alat | Prompt | Cara Output Digunakan |
+|---|---|---|---|---|
+| 1 | Bikin kerangka fungsi MCMC Knapsack  sebagai referensi | Gemini | "mcmc knapsack python metropolis hastings function template" | Ambil struktur fungsi metropolis-hastings buat nyari nilai optimal, trus disesuaiin lagi sama parameter dari tugas kelompok. |
+| 2 | Fix bug cell type di VS Code | Gemini | "kenapa notebook vscode tulisannya plain text gabisa di run" | Nemukan solusi kalau jenis selnya salah pencet ke plain text, trus diubah ke code biar python-nya bisa jalan. |
+
+**Ditulis tanpa AI:**
+- Penentuan nilai bit array ($m$) dan total fungsi hash ($k$) buat nyari nilai FPR terbaik di Bloom Filter.
+- Logika penalti kapasitas (kalau berat > capacity maka value = 0) di fungsi `mcmc_knapsack`.
+- Interpretasi hasil simulasi dadu di bagian awal notebook.
