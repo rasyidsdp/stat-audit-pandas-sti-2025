@@ -82,37 +82,39 @@ class BloomFilter:
 # BAGIAN 3: MCMC KNAPSACK
 # =====================================================================
 
-def mcmc_knapsack(items, capacity, n_iter=100000, T=1.0):
+def mcmc_knapsack(items, capacity, n_iter=10000, T=1.0):
     """
-    Menyelesaikan Knapsack Problem menggunakan Algoritma Metropolis-Hastings (MCMC) yang benar.
+    Menyelesaikan Knapsack Problem menggunakan Markov Chain Monte Carlo (MCMC)
+    dengan algoritma Metropolis-Hastings dan parameter Temperatur (T).
     """
     num_items = len(items)
-    current_state = np.zeros(num_items, dtype=int)
+    # Inisialisasi awal: semua barang tidak diambil (0)
+    current_state = [0] * num_items
     current_value = 0
     current_weight = 0
     
     best_state = current_state.copy()
-    best_value = current_value
+    best_value = 0
 
     for _ in range(n_iter):
-        # 1. Pilih item secara acak untuk di-flip (0 -> 1 atau 1 -> 0)
+        # 1. Pilih satu item secara acak untuk di-flip (0 -> 1 atau 1 -> 0)
         proposal_idx = random.randint(0, num_items - 1)
         proposal_state = current_state.copy()
         proposal_state[proposal_idx] = 1 - proposal_state[proposal_idx]
         
-        # 2. Hitung berat dan nilai proposal
+        # 2. Hitung berat dan nilai dari proposal_state menggunakan parameter 'items'
         proposal_weight = sum(items[i]['weight'] for i in range(num_items) if proposal_state[i] == 1)
         proposal_value = sum(items[i]['value'] for i in range(num_items) if proposal_state[i] == 1)
         
-        # Jika melebihi kapasitas, otomatis tolak proposal state ini
+        # Jika berat proposal melebihi kapasitas kantong, otomatis tolak proposal ini
         if proposal_weight > capacity:
             continue
             
-        # 3. Kriteria Penerimaan Metropolis-Hastings berdasarkan selisih nilai objektif
+        # 3. Kriteria Penerimaan Metropolis-Hastings
         if proposal_value > current_value:
             accept = True
         else:
-            # Menggunakan perbedaan nilai (delta) dan temperatur T
+            # Menggunakan selisih nilai objek (diff) dan pembagian temperatur T
             diff = proposal_value - current_value
             prob = math.exp(diff / T)
             accept = random.random() < prob
@@ -122,7 +124,7 @@ def mcmc_knapsack(items, capacity, n_iter=100000, T=1.0):
             current_value = proposal_value
             current_weight = proposal_weight
             
-            # Simpan jika ini konfigurasi terbaik yang sah
+            # Simpan jika ini adalah kombinasi terbaik yang valid
             if current_value > best_value:
                 best_value = current_value
                 best_state = current_state.copy()
