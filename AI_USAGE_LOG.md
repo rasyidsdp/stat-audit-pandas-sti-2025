@@ -7,7 +7,7 @@
 | Muhammad Rasyid Setyadi Dwi Putra | Data Engineer | Gemini, ChatGPT, Claude | ~35% | Tidak |
 | Neisya Nurfadilah | Estimation Analyst | — | — | — |
 | Adinda Syafira Kusumadewi | Inference Analyst | ChatGPT | ~40% | Tidak |
-| Rafiif Ikbaar Taufiqulhakiim | Hypothesis Analyst | — | — | — |
+| Rafiif Ikbaar Taufiqulhakiim | Hypothesis Analyst | Gemini | ~25% | Tidak |
 | Muhammad Risqi Maulana | Computation Analyst | — | — | — |
 
 ---
@@ -47,9 +47,16 @@
 
 ---
 
-### D — Hypothesis Analyst
+### Rafiif Ikbaar Taufiqulhakiim — Hypothesis Analyst
 
-(Akan diisi oleh Anggota D.)
+| No | Tugas | Alat | Prompt | Cara Output Digunakan |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Pembuatan struktur fungsi dasar `z_test_two_sample` | Gemini | "Bagaimana formula Python untuk manual Two-Sample Z-Test berdasarkan buku statistik?" | Output template fungsi digunakan sebagai basis logika komputasi matematika di cell 2, namun disesuaikan kembali alur kondisinya. |
+| 2 | Otomatisasi penanganan *path* direktori | Gemini | "Solusi jika sys.path.append tidak bisa mendeteksi root project karena double folder ekstraksi zip" | Digunakan sebagai alternatif solusi dinamis menggunakan modul `os` bawaan Python agar pencarian file data bersifat *robust*. |
+
+**Ditulis tanpa AI:** * Seluruh pengerjaan penyusunan narasi interpretasi akademik hasil uji hipotesis (analisis nilai $P$-value $= 0.3918$ terhadap tingkat signifikansi $\alpha = 0.05$).
+* Keputusan akhir statistik untuk Gagal Menolak $H_0$ serta analisis kritis mengenai ketimpangan jumlah sampel ($n_{\text{bug}}=52$ vs $n_{\text{enhancement}}=6$).
+* Penyelarasan, pembersihan *missing value* (`.dropna()`), dan pemetaan manual variabel target berdasarkan kolom riil dataset hasil preprocessing kelompok (`'labels'` dan `'days_to_close'`).
 
 ---
 
